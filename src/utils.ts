@@ -1,4 +1,5 @@
-export const assertNever = (x: never): never => {
-  // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-  throw Error("unhandled type" + x);
+export const assertNever = (value: never): never => {
+  throw new Error(
+    `Unhandled discriminated union member: ${JSON.stringify(value)}`
+  );
 };
